@@ -18,7 +18,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.css"
+        "styles.css",
+        "../node_modules/ng2d3/release/ng2d3.css"
       ],
       "scripts": [],
       "environments": {
