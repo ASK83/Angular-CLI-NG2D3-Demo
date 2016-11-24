@@ -19,7 +19,7 @@ import * as d3 from 'd3';
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.css']
 })
-export class CustomChartComponent extends BaseChart {
+export class CustomChartComponent extends BaseChart implements OnChanges, OnDestroy, AfterViewInit{
   dims: any;
   xScale: any;
   yScale: any;
