@@ -1,0 +1,15 @@
+<chart
+  [legend]="false"
+  [view]="[width, height]"
+  [colors]="colors"
+  [legendData]="xDomain">
+  <svg:g class="bar-chart chart">
+    <svg:g seriesVertical
+      [xScale]="xScale"
+      [yScale]="yScale"
+      [colors]="colors"
+      [series]="results"
+      [dims]="dims">
+    </svg:g>
+  </svg:g>
+</chart>
