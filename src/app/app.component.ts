@@ -14,15 +14,27 @@ export class AppComponent {
   data = [
     {
       "name": "Germany",
-      "value": 8940000
+      "value": 46268
     },
     {
       "name": "USA",
-      "value": 5000000
+      "value": 53041
     },
     {
       "name": "France",
-      "value": 7200000
+      "value": 42503
+    },
+    {
+      "name": "United Kingdom",
+      "value": 41787
+    },
+    {
+      "name": "Spain",
+      "value": 29863
+    },
+    {
+      "name": "Italy",
+      "value": 35925
     }
   ];
 

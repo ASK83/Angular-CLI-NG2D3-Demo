@@ -11,7 +11,7 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef
 } from '@angular/core';
-import { BaseChart } from 'ng2d3';
+import { BaseChartComponent } from 'ng2d3';
 import * as d3 from 'd3';
 
 @Component({
@@ -19,7 +19,7 @@ import * as d3 from 'd3';
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.css']
 })
-export class CustomChartComponent extends BaseChart implements OnChanges, OnDestroy, AfterViewInit{
+export class CustomChartComponent extends BaseChartComponent implements OnChanges, OnDestroy, AfterViewInit{
   dims: any;
   xScale: any;
   yScale: any;
@@ -90,7 +90,7 @@ export class CustomChartComponent extends BaseChart implements OnChanges, OnDest
     return [min, max];
   }
 
-  click(data) {
+  onClick(data) {
     this.clickHandler.emit(data);
   }
 

@@ -1,5 +1,15 @@
-<h2>Custom Chart</h2>
+<!-- <h2>Custom Chart</h2>
 <custom-chart
   [view]="[600,300]"
   [results]="data">
-</custom-chart>
+</custom-chart> -->
+
+<h1>Bar Chart</h1>
+<bar-vertical
+  [view]="[600,300]"
+  [results]="data"
+  [scheme]="colorScheme"
+  [xAxis]="true"
+  [yAxis]="true"
+  [legend]="true">
+</bar-vertical>
