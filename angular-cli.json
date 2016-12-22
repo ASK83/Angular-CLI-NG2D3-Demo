@@ -19,7 +19,7 @@
       "mobile": false,
       "styles": [
         "styles.css",
-        "../node_modules/ng2d3/release/ng2d3.css"
+        "../node_modules/ngx-charts/release/ngx-charts.css"
       ],
       "scripts": [],
       "environments": {

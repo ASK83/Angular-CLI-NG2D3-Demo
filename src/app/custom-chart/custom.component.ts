@@ -4,14 +4,13 @@ import {
   Output,
   EventEmitter,
   OnChanges,
-  OnDestroy,
-  AfterViewInit,
   ElementRef,
   NgZone,
   ChangeDetectionStrategy,
   ChangeDetectorRef
 } from '@angular/core';
-import { BaseChartComponent } from 'ng2d3';
+import { BaseChartComponent } from 'ngx-charts';
+import { ColorHelper } from 'ngx-charts';
 import * as d3 from 'd3';
 
 @Component({
@@ -19,31 +18,17 @@ import * as d3 from 'd3';
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.css']
 })
-export class CustomChartComponent extends BaseChartComponent implements OnChanges, OnDestroy, AfterViewInit{
+export class CustomChartComponent extends BaseChartComponent implements OnChanges {
   dims: any;
   xScale: any;
   yScale: any;
   xDomain: any;
   yDomain: any;
-  colors: Function;
-  colorScheme: any = ['#a8385d', '#7aa3e5', '#a27ea8', '#aae3f5', '#adcded', '#a95963', '#8796c0', '#7ed3ed', '#50abcc', '#ad6886'];
+  colors: ColorHelper;
+  colorScheme: any = 'cool';
 
   @Input() view;
   @Input() results;
-
-  @Output() clickHandler = new EventEmitter();
-
-  constructor(private element: ElementRef, private cd: ChangeDetectorRef, zone: NgZone) {
-    super(element, zone, cd);
-  }
-
-  ngAfterViewInit(): void {
-    this.bindResizeEvents(this.view);
-  }
-
-  ngOnDestroy() {
-    this.unbindEvents();
-  }
 
   ngOnChanges() {
     this.update();
@@ -90,13 +75,7 @@ export class CustomChartComponent extends BaseChartComponent implements OnChange
     return [min, max];
   }
 
-  onClick(data) {
-    this.clickHandler.emit(data);
-  }
-
   setColors() {
-    this.colors = d3.scaleOrdinal()
-      .range(this.colorScheme)
-      .domain(this.getXDomain());
+    this.colors = new ColorHelper(this.colorScheme, 'ordinal', this.xDomain);
   }
 }

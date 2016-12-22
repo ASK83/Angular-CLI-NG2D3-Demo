@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NG2D3Module } from 'ng2d3';
+import { NgxChartsModule } from 'ngx-charts';
 
 import { CustomChartComponent } from './custom.component';
 
@@ -8,7 +8,7 @@ import { CustomChartComponent } from './custom.component';
     CustomChartComponent
   ],
   imports: [
-    NG2D3Module
+    NgxChartsModule
   ],
   exports: [
     CustomChartComponent
